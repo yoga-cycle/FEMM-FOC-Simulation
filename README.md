@@ -19,3 +19,5 @@ FEMM will be used as the "Magnetics Problem" in this investigation. The winding 
 Lua scripts can automate FEMM analysis. The current in the windings is adjusted according to the rotor angle and the torque on the rotor is measured. The procedure is then repeated with the rotor slightly rotated to the next angle. The console receives the measured torques and rotor angles.
 
 ![torque vs rotor angle](https://github.com/yoga-cycle/FEMM-FOC-Simulation/blob/main/resources/plot.png)
+
+This [great blog post](https://things-in-motion.blogspot.com/2019/02/how-to-model-bldc-pmsm-motors-kv.html) served as the inspiration and source of ideas for this project.
