@@ -8,7 +8,7 @@ FEMM is a free tool for doing magnetic simulations. In this project, BLDC motor 
 ## stator and rotor design
 First step in simulating the motor is to design the stator with windings and rotor with magnets. The stator and rotor design can be saved as a DXF file and imported into FEMM. The DXF files are available in the resources folder.
 
-| ![stator DXF](https://github.com/yoga-cycle/FEMM-FOC-Simulation/blob/main/resources/stator.jpg) | ![rotor DXF](https://github.com/yoga-cycle/FEMM-FOC-Simulation/blob/main/resources/rotor.jpg)
+![Stator and rotor DXF](https://github.com/yoga-cycle/FEMM-FOC-Simulation/blob/main/resources/stator_rotor.jpg)
 
 ## configure FEMM
 FEMM will be used as the "Magnetics Problem" in this investigation. The winding pattern and magnet direction must be entered. It is necessary to choose appropriate materials for the magnets, winding, rotor, and stator. The toy motor's stack length is configured at 10mm. The information is already set up in the .fem file.
