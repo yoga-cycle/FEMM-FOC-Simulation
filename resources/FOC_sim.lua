@@ -55,6 +55,10 @@ for n=0,step do
     mo_showcontourplot(-1)
     mo_showdensityplot(1,0,2,0,"bmag")
 	
+	-- save simulation image to make a GIF later
+    -- filename = "sim-"..n..".bmp"
+    -- mo_savebitmap(filename)
+	
 	-- hide the plots after viewing. This makes the program more responsive
 	mo_hidedensityplot()
     mo_hidecontourplot()
