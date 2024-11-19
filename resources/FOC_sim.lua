@@ -22,16 +22,27 @@ mi_seteditmode("group")
 step=90
 rotation=0.2857
 
+-- rotate rotor to true neutral
+-- half pole up on stator, half pole down on rotor
+mi_selectgroup(1)
+mi_moverotate(0,0,360/14/2 - 360/12/2, 4)
+
+
 -- loop
 for n=0,step do
 	rotor_angle = n*rotation; -- current rotor angle, mechanical
 	rotor_axis_electrical_angle = rotor_angle*7; -- get electrical angle 
 	
+	I_d = 0
+	I_q = 20
+
 	-- this section simulates FOC. 
 	-- The d-axis is aligned with alpha-axis
-	-- Implements the inverse park transform. Id is set to 0, Iq is set to 20A.
-	i_alpha = -20*sin(rotor_axis_electrical_angle*3.14/180.0)
-	i_beta = 20*cos(rotor_axis_electrical_angle*3.14/180.0)
+	-- Implements the inverse park transform.
+	rr = rotor_axis_electrical_angle*3.141592654/180
+	i_alpha = I_d * cos(rr) - I_q*sin(rr)
+	i_beta =  I_d * sin(rr) + I_q*cos(rr)
+
 	-- inverse clarke transform.
 	i_a = i_alpha
 	i_b = -0.5*i_alpha + 0.8660*i_beta
